@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const playlist = require('./playlist');
 
 const options = {
   timestamps: true,
@@ -25,7 +26,10 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  // playlist: {
+  //   type: [playlistSchema]
+  // }
 }, options);
 
 module.exports = mongoose.model('User', userSchema);
